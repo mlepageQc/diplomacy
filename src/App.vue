@@ -1,23 +1,42 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view></router-view>
+    <app-header></app-header>
+    <navigation></navigation>
+    <main>
+      <router-view></router-view>
+    </main>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'app',
-};
+
+  import AppHeader from '@/components/app-header'
+  import Navigation from '@/components/navigation'
+
+  export default {
+    name: 'app',
+
+    components: {
+      AppHeader,
+      Navigation
+    }
+  }
+
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
+  #app {
+    width: 100%;
+    height: 100%;
+  }
+
+  main {
+    height: calc(100% - 60px);
+    width: calc(100% - 196px);
+    margin-left: 196px;
+    background: grey;
+    margin-top: 60px;
+  }
+
 </style>
